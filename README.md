@@ -5,7 +5,7 @@ WixetRecaptchaBundle
 [![Coverage Status](https://coveralls.io/repos/github/maxpowel/WixetRecaptchaBundle/badge.svg?branch=master)](https://coveralls.io/github/maxpowel/WixetRecaptchaBundle?branch=master)
 [![License](https://poser.pugx.org/maxpowel/wixet-recaptcha-bundle/license)](https://packagist.org/packages/maxpowel/wixet-recaptcha-bundle)
 
-Add google captcha valitation to symfony forms easily
+Add google captcha validation to symfony forms easily
 
 ## Installation
 
@@ -61,5 +61,5 @@ Don't forget to include the type
 use Wixet\RecaptchaBundle\Form\Type\WixetRecaptchaType;
 ```
 
-Thats all!
+That's all!
 
