@@ -16,6 +16,7 @@
                 <directory>./Tests</directory>
                 <directory>./vendor</directory>
                 <directory>./DependencyInjection</directory>
+                <directory>./Form</directory>
             </exclude>
         </whitelist>
     </filter>
