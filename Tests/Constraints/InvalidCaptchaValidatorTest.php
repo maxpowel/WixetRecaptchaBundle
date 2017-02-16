@@ -29,6 +29,12 @@ class InvalidCaptchaValidatorTest extends ConstraintValidatorTestCase
         $this->validator->validate(null, new Recaptcha());
         $this->buildViolation('Captcha validation failed')->assertRaised();
     }
+
+    public function testInvalidCaptcha2() {
+        //TESTING TRAVIS
+        $this->validator->validate(null, new Recaptcha());
+        $this->assertNoViolation();
+    }
     
 
 }
