@@ -1,0 +1,15 @@
+services:
+  wixet_recaptcha.form.type:
+          class: Wixet\RecaptchaBundle\Form\Type\WixetRecaptchaType
+          arguments:
+              - '%wixet_recaptcha.site_key%'
+          tags:
+              - { name: form.type }
+
+  wixet_recaptcha.validator:
+          class: Wixet\RecaptchaBundle\Validator\Constraint\RecaptchaValidator
+          arguments:
+              - '@request_stack'
+              - '%wixet_recaptcha.secret%'
+          tags:
+              - { name: validator.constraint_validator, alias: 'wixet_recaptcha' }
