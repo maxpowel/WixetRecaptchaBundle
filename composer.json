@@ -22,7 +22,10 @@
     },
 
     "autoload": {
-        "psr-4": { "Wixet\\RecaptchaBundle\\": "" }
+        "psr-4": { "Wixet\\RecaptchaBundle\\": "" },
+        "exclude-from-classmap": [
+            "Tests/"
+        ]
     }
 
 }

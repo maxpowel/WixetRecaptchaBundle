@@ -5,5 +5,11 @@ php:
 
 before_script:
   - composer update
+  - composer require satooshi/php-coveralls
 
-script: phpunit --coverage-text
+script:
+  - mkdir -p build/logs
+  - phpunit --coverage-text
+
+after_success:
+  - travis_retry php vendor/bin/coveralls
