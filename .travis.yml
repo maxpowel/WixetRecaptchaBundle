@@ -3,16 +3,7 @@ language: php
 php:
   - 5.5.9
 
-cache:
-  directories:
-    - $HOME/.composer/cache/files
-
-env:
-  - SYMFONY_VERSION=dev-master
-
 before_script:
-  - composer require symfony/http-foundation:${SYMFONY_VERSION}
-
-install: composer update
+  - composer require symfony/framework-bundle:dev-master
 
 script: phpunit --coverage-text
