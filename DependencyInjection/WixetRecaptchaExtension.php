@@ -34,6 +34,5 @@ class WixetRecaptchaExtension extends Extension
         $formResources = $parameters->get("twig.form.resources");
         $formResources[] = "WixetRecaptchaBundle:Form:recaptcha_widget.html.twig";
         $parameters->set("twig.form.resources", $formResources);
-
     }
 }

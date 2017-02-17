@@ -61,5 +61,38 @@ Don't forget to include the type
 use Wixet\RecaptchaBundle\Form\Type\WixetRecaptchaType;
 ```
 
+## Multiple and delayed render
+Sometimes you need multiple recaptchas or delayed render (not render onload but render when you want).
+This is useful for example when you load ajax content with recaptchas.
+
+The first step is include the recaptcha script manually (where you load all your scripts), you have to options:
+
+```twig
+{{ include_recaptcha() | raw }}
+```
+or
+
+```twig
+{{ include('WixetRecaptchaBundle::recaptcha_explicit.html.twig', { 'site_key': recaptcha_site_key() }) }}
+```
+
+I prefer the first way but the second allows more customization.
+
+Now render the form as usual with the option "explicitRender=true"
+
+```php
+
+$form = $this->createFormBuilder()
+            ->add("name", TextType::class)
+            ->add("recaptcha", WixetRecaptchaType::class, array(
+                'explicit_render' => true
+            ))
+            ->add("Submit", SubmitType::class)
+            ->getForm()
+        ;
+
+```
+
+
 That's all!
 

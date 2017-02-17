@@ -1,4 +1,21 @@
 {% block wixet_recaptcha_widget %}
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <div class="g-recaptcha" data-sitekey="{{ form.vars.site_key }}"></div>
+    COSAS NAZIS
+    {% if not form.vars.explicit_render %}
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <div class="g-recaptcha" data-sitekey="{{ form.vars.site_key }}"></div>
+    {% else %}
+        <div id="{{ form.vars.recaptcha_id }}" class="g-recaptcha" data-sitekey="{{ form.vars.site_key }}"></div>
+        <script>
+            if((typeof grecaptcha) == 'undefined') {
+                // recaptcha is not loaded yet
+                if (document.wixetRecaptchas == undefined) {
+                    document.wixetRecaptchas = []
+                }
+                document.wixetRecaptchas.push('{{ form.vars.recaptcha_id }}')
+            } else {
+                // recaptcha is ready
+                recaptchaRender('{{ form.vars.recaptcha_id }}')
+            }
+        </script>
+    {% endif %}
 {% endblock wixet_recaptcha_widget %}

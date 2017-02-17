@@ -1,0 +1,21 @@
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadRecaptchaCallback&render=explicit" async defer>
+</script>
+<script>
+    var onloadRecaptchaCallback = function() {
+        // Render pending captchas
+        if(document.wixetRecaptchas != undefined) {
+            for(var i=0; i < document.wixetRecaptchas.length; i++) {
+                var captchaId = document.wixetRecaptchas[i];
+                recaptchaRender(captchaId);
+            }
+        }
+    };
+
+    var recaptchaRender = function(elementPath) {
+        console.log("Rendering: " + elementPath);
+        grecaptcha.render(elementPath, {
+            'sitekey' : '{{ site_key }}'
+        });
+    };
+</script>
+

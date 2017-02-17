@@ -13,3 +13,11 @@ services:
               - '%wixet_recaptcha.secret%'
           tags:
               - { name: validator.constraint_validator, alias: 'wixet_recaptcha' }
+
+  wixet_recaptcha.twig.extension:
+      class: Wixet\RecaptchaBundle\Twig\RecaptchaExtension
+      tags:
+             - { name: twig.extension }
+      arguments:
+          - '%wixet_recaptcha.site_key%'
+          - '@twig'

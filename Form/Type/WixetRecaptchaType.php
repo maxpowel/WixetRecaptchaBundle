@@ -30,13 +30,18 @@ class WixetRecaptchaType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-           'constraints' => array(new Recaptcha())
+           'constraints' => array(new Recaptcha()),
+            'explicit_render' => false
         ));
     }
 
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
         $view->vars['site_key'] = $this->siteKey;
+        $view->vars['explicit_render'] = $options['explicit_render'];
+        if($options['explicit_render']) {
+            $view->vars['recaptcha_id'] = uniqid();
+        }
     }
 
     /**
