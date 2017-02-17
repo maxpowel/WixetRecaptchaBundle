@@ -78,7 +78,7 @@ or
 
 I prefer the first way but the second allows more customization.
 
-Now render the form as usual with the option "explicitRender=true"
+Now render the form as usual but with the option "explicit_render=true"
 
 ```php
 
