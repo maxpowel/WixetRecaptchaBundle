@@ -61,7 +61,7 @@ Don't forget to include the type
 use Wixet\RecaptchaBundle\Form\Type\WixetRecaptchaType;
 ```
 
-## Multiple and delayed render
+## Multiple and delayed rendering
 Sometimes you need multiple recaptchas or delayed render (not render onload but render when you want).
 This is useful for example when you load ajax content with recaptchas.
 
